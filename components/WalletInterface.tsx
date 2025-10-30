@@ -1,3 +1,21 @@
+import { AppConfig, UserSession, showConnect } from '@stacks/connect';
+const appConfig = new AppConfig(['store_write', 'publish_data']);
+const userSession = new UserSession({ appConfig });
+
+function connectWallet() {
+  showConnect({
+    appDetails: {
+      name: 'Il Mio Wallet BTC/STX',
+      icon: 'https://youriconurl.com/icon.png',
+    },
+    userSession,
+    onFinish: () => {
+      const userData = userSession.loadUserData();
+      const address = userData.profile.stxAddress.testnet; // usa testnet per ora
+      document.getElementById('walletAddress').innerText = `Wallet collegato: ${address}`;
+    },
+  });
+}
 import React, { useState } from 'react';
 import { Wallet, Send, ArrowDownToLine, History, Settings, TrendingUp, Copy, Check } from 'lucide-react';
 import SendModal from './SendModal';
