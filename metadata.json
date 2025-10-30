@@ -1,0 +1,5 @@
+{
+  "name": "BTC Hiro Wallet Interface",
+  "description": "A modern, visually appealing interface for a Bitcoin and Stacks wallet, designed with a dark theme, gradient colors, and glassmorphism effects. This frontend showcases wallet balance, transaction history, and key actions like sending and receiving assets.",
+  "requestFramePermissions": []
+}
